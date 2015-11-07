@@ -1,0 +1,3 @@
+3 4			# quality_dimensions_length require_dimensions_length for set A, (for set B we can get by just reversing these values)
+1024		# page size on machine
+4 12		# pointer_size key_size
