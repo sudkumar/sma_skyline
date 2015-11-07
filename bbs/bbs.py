@@ -44,10 +44,10 @@ class BBS():
 				continue
 
 			# key is not dominated 
-			if(key.childNode != None):
+			if not key.node.IsLeaf():
 				# we are not at leaf node
 				# do the expansions
-				prHeap.Enqueue(key.childNode)
+				prHeap.Enqueue(key.child)
 			else:
 				# we are at leap and found a tuple, so insert it into skyline set
 				skylines.append(key)	
