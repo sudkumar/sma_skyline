@@ -4,6 +4,7 @@ from r_tree.rTree import RTree
 from bbs.bbs import BBS
 from sm_algo.gsa import GSA
 import threading
+import time
 
 
 # fill data into RTree from fileHandle with given dimensions
@@ -79,11 +80,11 @@ def main():
 		# compute skylines for both sets	
 		skylinesA, comparisionsA = bbsA.Skyline()
 		skylinesB, comparisionsB = bbsB.Skyline()
-
+		# print "----------------"
 		gsa = GSA(skylinesA, skylinesB)
 		matched, unmatched = gsa.Marriage()
 
-
+		
 		# print the matched result
 		# printMatched(matched, skyFile)
 		thread = threading.Thread(target=printMatched, args=[matched, skyFile])
@@ -92,7 +93,7 @@ def main():
 
 		matchedA = matched[0]
 		matchedB = matched[1]
-
+	
 		# remove matched key from trees
 		for key in matchedA:
 			rTreeA.Delete(key)
