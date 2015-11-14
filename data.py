@@ -58,7 +58,7 @@ def main(argv=None):
 		# also gives 	quality dimension for set B	
 		aRDims = int(args[2])
 	else:
-		print "Program requires two files names as arguments."
+		print "Program requires 3 args..."
 		print "for help use --help"
 		sys.exit(2)
 

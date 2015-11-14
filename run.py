@@ -87,9 +87,9 @@ def main():
 		
 		# print the matched result
 		# printMatched(matched, skyFile)
-		thread = threading.Thread(target=printMatched, args=[matched, skyFile])
-		threads.append(thread)
-		thread.start()
+		# thread = threading.Thread(target=printMatched, args=[matched, skyFile])
+		# threads.append(thread)
+		# thread.start()
 
 		matchedA = matched[0]
 		matchedB = matched[1]
@@ -110,4 +110,7 @@ def main():
 	# everything is done till this point
 
 if __name__ == "__main__":
+	startTime = time.time()
 	main()
+	endTime = time.time()
+	print str((endTime - startTime)*1000)
