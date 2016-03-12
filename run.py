@@ -36,7 +36,7 @@ def printMatched(matched, skyFile):
 		b = str(setB[i].child.id)
 		# +" " + ' '.join(map(str, setB[i].mbr.minDim + setB[i].child.data )) 
 		lock.acquire() 
-		skyFile.write( a + " <> " + b + "\n") 
+		skyFile.write( a + "<>" + b + "\n") 
 		lock.release()
 
 # main function 
@@ -74,7 +74,7 @@ def main():
 
 	threads = []
 
-	skyFile = open("skyline.txt", "w")
+	skyFile = open("smaOut_sky.txt", "w")
 
 	while not rTreeA.IsEmpty() or not rTreeB.IsEmpty():
 		# compute skylines for both sets	
@@ -87,9 +87,9 @@ def main():
 		
 		# print the matched result
 		# printMatched(matched, skyFile)
-		# thread = threading.Thread(target=printMatched, args=[matched, skyFile])
-		# threads.append(thread)
-		# thread.start()
+		thread = threading.Thread(target=printMatched, args=[matched, skyFile])
+		threads.append(thread)
+		thread.start()
 
 		matchedA = matched[0]
 		matchedB = matched[1]

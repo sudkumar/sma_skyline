@@ -20,3 +20,17 @@ This will put matching ids into skyline.txt like this:
 	ak.id bl.id
 
 here a(x).id matched with b(y).id  
+
+### Create the preference table
+
+> Prints the rank list of all women for a man and of all men for a women in list format. Make sure the data files are been create before running this
+
+    python pref_table.py
+
+
+
+### Compute Score for both the algorith
+
+> Computes the score of both the algorithm and prints in a list format. Lower the score, better is the matching. Make sure both the algorithm's output files are genereated
+
+    python computeScore.py

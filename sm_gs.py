@@ -197,8 +197,9 @@ def main():
 	matched, unmatched = gsa.Marriage()
 	aMatched = matched[0]
 	bMatched = matched[1]
-	# for a in range(len(aMatched)):
-	# 	print aMatched[a][0], "<>", bMatched[a][0]
+	with open("smaOut.txt", "w") as smaOutFile:
+		for a in range(len(aMatched)):
+			smaOutFile.write(str(aMatched[a][0])+ "<>" + str(bMatched[a][0])+"\n")
 
 
 if __name__ == "__main__":
